@@ -30,7 +30,6 @@
 /*
  * Main.
  */
-
 #include <types.h>
 #include <kern/errno.h>
 #include <kern/reboot.h>
@@ -52,6 +51,7 @@
 #include "autoconf.h"  // for pseudoconfig
 #include "opt-A0.h"
 
+//#include "threadfun.c"
 /*
  * These two pieces of data are maintained by the makefiles and build system.
  * buildconfig is the name of the config file the kernel was configured with.
@@ -105,7 +105,12 @@ boot(void)
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 	hello();
+	kprintf("\n what the hell? %s\n");
+	   hello();
+	   hello();
+//	threadfun(1, "hey");
 	#if OPT_A0
+	   hello();
 	   hello();
 	#endif /* OPT_A0 */
 	/* Early initialization. */
